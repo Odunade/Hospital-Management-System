@@ -1,0 +1,12 @@
+---
+- name: install node and npm
+  hosts: 192.46.225.14
+  tasks: 
+    - name: Update apt repo and Cache
+      apt: update_cache=yes force_apt_get=yes cache-valid_time=3600
+    - name: install nodejs and npm
+      apt: 
+        pkg: 
+          - nodejs
+          - npm
+
